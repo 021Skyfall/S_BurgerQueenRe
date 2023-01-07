@@ -20,8 +20,9 @@ public class ProductRepository {
     public Product[] getProducts() {
         return products;
     }
-    public void ListItem() {
+    public Product[] ListItem(int productId) {
         List<Product> list = Arrays.asList(products);
-        list.forEach(System.out::println);
+        list.stream().filter(e -> e.getId() == productId)
+
     }
 }
