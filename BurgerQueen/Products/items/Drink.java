@@ -17,4 +17,6 @@ public class Drink extends Product {
     public void setHasStraw(boolean hasStraw) {
         this.hasStraw = hasStraw;
     }
+
+
 }

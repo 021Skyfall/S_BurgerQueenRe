@@ -17,11 +17,11 @@ public class Menu {
         System.out.println("[🔻] 메뉴");
         System.out.println("-".repeat(60));
 
-        printBurger();
+        printBurger(true);
 
-        printSide();
+        printSide(true);
 
-        printDrink();
+        printDrink(true);
 
         System.out.println();
         System.out.println("🧺 (0) 장바구니");
@@ -30,7 +30,7 @@ public class Menu {
         System.out.print("[📣] 메뉴를 선택해주세요 : ");
     }
 
-    private void printDrink() {
+    public void printDrink(boolean printPrice) {
         System.out.println("🥤 음료");
 //        여기에서 음료 출력
         for (Product product : products) {
@@ -44,7 +44,7 @@ public class Menu {
         System.out.println();
     }
 
-    private void printSide() {
+    public void printSide(boolean printPrice) {
         System.out.println("🍟 사이드");
 //        여기에서 사이드 출력
         for (Product product : products) {
@@ -58,7 +58,7 @@ public class Menu {
         System.out.println();
     }
 
-    private void printBurger() {
+    private void printBurger(boolean printPrice) {
         System.out.println("🍔 햄버거");
 //        여기에서 햄버거 출력
         for (Product product : products) {
