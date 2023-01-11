@@ -14,6 +14,7 @@ public class OrderApp {
         Menu menu = new Menu(products);
         Cart cart = new Cart(productRepository,menu);
         Scanner scanner = new Scanner(System.in);
+        Order order = new Order(cart);
 
         System.out.println("🍔 Hello this is BurgerQueen Kiosk");
         sleepMessage();
@@ -26,6 +27,7 @@ public class OrderApp {
             String select = scanner.nextLine();
 
             if (select.equals("+")) {
+                order.makeOrder();
                 break;
             } else {
                 int menuNum = Integer.parseInt(select);
