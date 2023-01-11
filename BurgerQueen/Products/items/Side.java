@@ -10,6 +10,12 @@ public class Side extends Product {
         this.ketchup = ketchup;
     }
 
+    // 깊은 복사
+    public Side(Side side) {
+        super(side.getName(), side.getPrice(), side.getKcal());
+        this.ketchup = side.getKetchup();
+    }
+
     public int getKetchup() {
         return ketchup;
     }

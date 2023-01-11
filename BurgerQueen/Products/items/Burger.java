@@ -12,6 +12,14 @@ public class Burger extends Product {
         this.burgerSetPrice = burgerSetPrice;
     }
 
+    //깊은 복사
+    public Burger(Burger burger) {
+        super(burger.getName(), burger.getPrice(), burger.getKcal());
+        this.isBurgerSet = burger.isBurgerSet();
+        this.burgerSetPrice = getBurgerSetPrice();
+    }
+    // 인자로 자기 자신을 받아와서 해당 인자에 새로 값을 추가함
+
     public boolean isBurgerSet() {
         return isBurgerSet;
     }
