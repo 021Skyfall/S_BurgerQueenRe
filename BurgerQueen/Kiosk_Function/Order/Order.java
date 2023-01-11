@@ -16,7 +16,7 @@ public class Order {
 
         cart.printCart();
 
-        System.out.println("-".repeat(60));
+        System.out.println("-".repeat(50));
         System.out.printf("금액 합계      : %d원\n", cart.calTotal());
     }
 }
