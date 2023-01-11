@@ -74,7 +74,7 @@ public class Cart {
             Burger burger = (Burger) product;
             if (burger.isBurgerSet()) product = composeSet(burger);
         }
-        Product[] newItems = new Product[items.length];
+        Product[] newItems = new Product[items.length + 1];
         System.arraycopy(items,0,newItems,0,items.length);
         newItems[newItems.length-1] = product;
         items = newItems;
