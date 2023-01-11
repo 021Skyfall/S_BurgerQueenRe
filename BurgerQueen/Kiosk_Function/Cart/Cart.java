@@ -74,6 +74,14 @@ public class Cart {
             Burger burger = (Burger) product;
             if (burger.isBurgerSet()) product = composeSet(burger);
         }
+
+        //깊은 복사
+        Product newProduct;
+        if (product instanceof Burger) newProduct = new Burger((Burger) product);
+        else if (product instanceof Side) newProduct = new Side((Side) product);
+        else if (product instanceof Drink) newProduct = new Drink((Drink) product);
+        else newProduct = product;
+
         Product[] newItems = new Product[items.length + 1];
         System.arraycopy(items,0,newItems,0,items.length);
         newItems[newItems.length-1] = product;
