@@ -116,18 +116,20 @@ public class Cart {
 
         String sideId = scanner.nextLine();
         Side side = (Side) productRepository.findId(Integer.parseInt(sideId));
-        chooseOption(side);
+        Side newSide = new Side(side); // 깊은 복사
+        chooseOption(newSide); // 깊은 복사
 
         System.out.println("음료를 골라주세요.");
         menu.printDrink(false);
 
         String DrinkId = scanner.nextLine();
         Drink drink = (Drink) productRepository.findId(Integer.parseInt(DrinkId));
-        chooseOption(drink);
+        Drink newDrink = new Drink(drink); // 깊은 복사
+        chooseOption(newDrink); // 깊은 복사
 
         String name = burger.getName() + "세트";
         int price = burger.getBurgerSetPrice();
         int kcal = burger.getKcal() + side.getKcal() + drink.getKcal();
-        return new Burger_Set(name,price,kcal,burger,side,drink);
+        return new Burger_Set(name,price,kcal,burger,newSide,newDrink); // 깊은복사
     }
 }
